@@ -1,0 +1,13 @@
+<template name="header">
+	<div id="view-header full-width">
+		<div class="col-xs-6">
+			<a id="home-icon"><span class="fa fa-home"></span></a> |
+			<a id="logout-icon"><span class="fa fa-power-off"></span></a>
+			{{#if isAdmin}} | <a href="/admin">Admin</a>{{/if}}
+		</div>
+
+		<div class="col-xs-6 right">
+			<a href="/user/{{currentUser._id}}">{{currentUser.profile.name}}</a>
+		</div>
+	</div>
+</template>

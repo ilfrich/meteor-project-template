@@ -1,0 +1,112 @@
+@import "variables";
+
+/*
+ * Use this for form labels of required fields: <label>My Label <span class="required"></span></label> - this will
+ * render a red asterisk next to the label.
+ */
+.required:after {
+  padding-left: 5px;
+  color: #f00;
+  font-weight: bold;
+  content: '*';
+}
+
+/* Use on any element */
+.right {
+  text-align: right;
+}
+/* Use on any element */
+.center {
+  text-align: center;
+}
+/* Use on any element */
+.full-width {
+  width: 100%;
+}
+
+/*
+ * This is intended to be used for bootstrap col-??-? classes (layout). By default all col-* classes of bootstrap add
+ * a 15px padding left and right. This overwrites this padding
+ */
+.col-no-padding, .no-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*
+ * This can be used for div's that need to be vertical aligned. Please be aware that display: table changes the
+ * behaviour of sub-elements as well.
+ */
+div.middle {
+  display: table;
+  vertical-align: middle;
+}
+
+/*
+ * Can be used as an alternative to button.btn-danger
+ */
+button.error {
+  background-color: #A00;
+  color: #fff;
+}
+/*
+ * Generic error class to change the text color to red.
+ */
+div.error, span.error, p.error {
+  color: #f00;
+}
+
+/*
+ * Styling for different headings
+ */
+h1 {
+  color: @brandColor;
+  font-size: 28px;
+  text-decoration: underline;
+}
+h2 {
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-bottom: @defaultBorder;
+}
+
+/*
+ * Draws a 15x15 px square with a border. The background color should be determined by other classes.
+ * E.g. <span class="square square-red"> and then .square-red just specifies the background-color: #a00;
+ */
+.square {
+  padding-left: 15px;
+  margin-right: 5px;
+  height: 15px;
+  border: 1px solid #ccc;
+}
+
+/*
+ * If a button has a font-awesome icon in it, leave a 5px space to the right of the icon (@)
+ *
+ * Button:  ------------
+ *         |   @ text   |
+ *          ------------
+ */
+button span.fa {
+  padding-right: 5px;
+}
+
+/*
+ * Form elements: show a red border around form elements with an error class.
+ */
+textarea.error,input.error,select.error {
+  border: 1px solid #f00;
+}
+
+/*
+ * Add this class to any object that has show/hide/slide interactions. If such an interaction is executed the animation
+ * will be smooth.
+ */
+.ease {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
