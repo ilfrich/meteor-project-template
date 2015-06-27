@@ -1,1 +1,5 @@
 .idea
+.DS_Store
+dump
+development.json
+production.json
