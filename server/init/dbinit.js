@@ -36,4 +36,5 @@ Meteor.startup(function() {
             Accounts.createUser(user);
         }
     });
+
 });

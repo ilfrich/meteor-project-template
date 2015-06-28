@@ -1,11 +1,12 @@
-{{!-- Meta tags for the document head. Add external Javascript / CSS here --}}
+<!-- Meta tags for the document head. Add external Javascript / CSS here -->
 <head>
 	<meta name="apple-mobile-web-app-capable" content="yes"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 </head>
 
-{{!-- The main layout template --}}
+
 <template name="layout">
+	{{!-- The main layout template --}}
 
 	{{#if currentUser}}
 		{{!-- if the user is logged in show the header and main yield --}}
@@ -26,5 +27,4 @@
 	{{#unless currentUser}}
 		{{> yield}}
 	{{/unless}}
-
 </template>

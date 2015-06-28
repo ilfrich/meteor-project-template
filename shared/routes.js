@@ -10,7 +10,8 @@
  */
 Router.configure({
     // refers to a <template name="layout">
-    layoutTemplate: 'layout'
+    layoutTemplate: 'layout',
+    loadingTemplate: 'loading'
 });
 
 /**
@@ -63,20 +64,46 @@ function checkAdmin() {
 
 /**
  * The default route. Displays the dashboard / home template and subscribes to a few collections/documents.
+ *
+ * By using waitOn you can add subscriptions to the waiting list. The action function will not be executed before all
+ * the subscriptions are loaded.
+ * subscriptions are ready yet.
  */
-Router.route('/', function() {
-    if (checkLogin()) {
-        // refers to pubcategories.js > allCategories publication
-        this.wait(Meteor.subscribe('allCategories'));
-        // refers to pubentries.js > newEntries
-        this.wait(Meteor.subscribe('newEntries', 10));
+Router.route('/', {
+    waitOn: function() {
+        return [Meteor.subscribe('allCategories'), Meteor.subscribe('newEntries', 10)];
+    },
+    action: function() {
         this.render('dashboard');
-    }
-    else {
-        // user not logged in -> go to login route
-        Router.go('/login');
+    },
+    data: {
+        categories: dbCategories.find(),
+        newEntries: dbEntries.find()
     }
 });
+
+
+/* ALTERNATIVE WAY TO DECLARE THE SAME ROUTE */
+/*
+Router.route('/', function() {
+    // refers to pubcategories.js > allCategories
+    this.wait(Meteor.subscribe('allCategories'));
+    // refers to pubentries.js > newEntries
+    this.wait(Meteor.subscribe('newEntries', 10));
+
+    if (this.ready()) {
+        // once all subscriptions are loaded
+        this.render('dashboard', { data: {
+            categories: dbCategories.find(),
+            newEntries: dbEntries.find()
+        }});
+    }
+    else {
+        // as long as subscriptions are not fully loaded yet
+        this.render('loading');
+    }
+});
+*/
 
 /**
  * Login route, showing a login form.
@@ -91,22 +118,27 @@ Router.route('/login', function() {
 });
 
 
+/**
+ * An example route for route parameter. They can be accessed via this.params.
+ * If your route defines :foobar as URL parameter, it can be accessed via this.params.foobar.
+ */
 /*
 Router.route('/category/:category', function() {
-    if (checkLogin()) {
-        this.wait(Meteor.subscribe('category', this.params.category));
-        this.wait(Meteor.subscribe('entriesByCategory', this.params.category));
-        if (this.ready()) {
-            // render the template 'category'
-            this.render('category', {
-                data: {
-                    // this will only return the categories we've subscribed to
-                    categories: dbCategories.find(),
-                    // this will only return the entries we've subscribed to
-                    entries: dbEntries.find()
-                }
-            });
-        }
+    this.wait(Meteor.subscribe('category', this.params.category));
+    this.wait(Meteor.subscribe('entriesByCategory', this.params.category));
+    if (this.ready()) {
+        // render the template 'category'
+        this.render('category', {
+            data: {
+                // this will only return the categories we've subscribed to
+                categories: dbCategories.find(),
+                // this will only return the entries we've subscribed to
+                entries: dbEntries.find()
+            }
+        });
+    }
+    else {
+        this.render('loading');
     }
 });
 */
@@ -118,5 +150,8 @@ Router.route('/category/:category', function() {
 Router.route('/system', function() {
     if (checkAdmin()) {
         this.render('admindashboard');
+    }
+    else {
+        Router.go('/');
     }
 });

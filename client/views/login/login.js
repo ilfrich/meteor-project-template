@@ -11,27 +11,24 @@ Template.login.events({
     'submit #login-form': function(e) {
         e.preventDefault();
 
+        // read values from form
         var email = $('#username').val();
         var password = $('#password').val();
+
+        // show loading animation
         $('.fa-spinner').show();
 
-
         // login with local account
-        var loginResult = Meteor.loginWithPassword(email, password, function(err) {
+        Meteor.loginWithPassword(email, password, function(err) {
             if (err) {
-                return false;
+                // login failed
+                $('.fa-spinner').hide();
+                $('#login-button').removeClass('btn-primary').addClass('btn-danger');
             }
             else {
-                // the route will take care of the redirect
-                return true;
+                // login successful - the route will take care of the redirect
             }
         });
-
-        if (!loginResult)
-        {
-            $('.fa-spinner').hide();
-            $('#login-button').removeClass('btn-primary').addClass('btn-danger');
-        }
     },
 
 

@@ -10,7 +10,7 @@ dbEntries = new Mongo.Collection('entries');
  *
  * This schema specification requires the package aldeed:collection2
  */
-dbCategories.attachSchema(
+dbEntries.attachSchema(
     new SimpleSchema({
         name: {
             type: String
@@ -52,7 +52,7 @@ dbCategories.attachSchema(
  */
 if (Meteor.isServer) {
     // server side privileges (all true -> don't need to specify)
-    dbCategories.allow({
+    dbEntries.allow({
         // short notation: not passing any parameters, because we don't use them=
         insert: function() {
             return true;
