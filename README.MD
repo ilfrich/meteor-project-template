@@ -90,7 +90,7 @@ Routes are specified in **/shared/routes.js** If you have a really big applicati
 ### Collections
 
 Collections need to be accessible in the client and the server, which is why they're declared in the folder
-**/shared/model/**. Adding the prefix db<collectionname> to the file, will make it easier to find. It is recommended to
+**/shared/model/**. Adding the prefix db\<collectionname\> to the file, will make it easier to find. It is recommended to
 create a separate file for each collection. Besides just declaring the collection, you can attach a schema to it, define
 before and after hooks for all operations and control access privileges.
 
@@ -102,7 +102,7 @@ Publications are declared on the server-side. They are located in **/server/publ
 publications for one collection.
 The router is subscribing to a few of the example publications and displaying a loading template while doing so. The
 loading template is located in /client/views/loading/loading.html. To see it for longer in the local environment, you
-can add a delay to one of the publications. E.g. for the main route ('/') the router subscribes to `allCategories`,
+can add a delay to one of the publications. E.g. for the main route (`'/'`) the router subscribes to `allCategories`,
 which is declared in /server/publications/pubcategories.js. The publication contains a commented out
 `Meteor._sleepForMs(2000)`, which delays the subscription by 2 seconds. So accessing the home route will show the
 loading template for 2 seconds.
@@ -130,8 +130,8 @@ form validation and a user suggest search.
 
 #### Views
 
-Each view is stored in a separate sub-folder like **/client/views/<viewname>/**. If multiple views have a strong
-correlation, you can group them together in a sub folder: e.g. /client/views/mygroup/<viewname>. One thing to avoid is
+Each view is stored in a separate sub-folder like **/client/views/\<viewname\>/**. If multiple views have a strong
+correlation, you can group them together in a sub folder: e.g. /client/views/mygroup/\<viewname\>. One thing to avoid is
 having a list of 20+ views on the same level. As the number of views increases, you should group them together into
 sub-folders.
 
@@ -141,7 +141,7 @@ A view contains:
  * a JS file containing the template helpers, events and other hooks (rendered, created, destroyed)
  * a CSS/LESS file containing the template styles
 
-Ideally the name of the HTML, JS and LESS file is the same as the name of the view. So if you delcare a view 'myview',
+Ideally the name of the HTML, JS and LESS file is the same as the name of the view. So if you declare a view `myview`,
 you will have:
 
 * **/client/views/myview/myview.html** to declare the `<template name="myview">`
@@ -161,7 +161,7 @@ application, helper CSS classes and commonly used UI elements.
 
 To avoid view-dependent styles to affect any other views, it is recommended to start your view with an ID (if the view
 is never displayed twice on the same screen) or a specific CSS class (if the view is reused on the same page). A useful
-convention is to start a template with a `<div id="view-myview">` (if the name of the view is "myview") and inside the
+convention is to start a template with a `<div id="view-myview">` (if the name of the view is `"myview"`) and inside the
 LESS file:
 
     @import "../variables";
