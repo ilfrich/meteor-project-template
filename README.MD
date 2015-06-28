@@ -1,5 +1,21 @@
 # Meteor Project Template / Boilerplate
 
+## Table of Content
+
+* [Feature Overview](#feature-overview)
+* [Features](#features)
+    * [Initialization](#initialization)
+    * [Packages](#packages)
+    * [Router](#router)
+    * [Collections](#collections)
+    * [Publications and Subscriptions](#publications-and-subscriptions)
+    * [Server Methods](#server-methods)
+    * [Client Code](#client-code)
+         * [Compatibility](#compatibility)
+         * [Views](#views)
+         * [LESS/CSS and Variables](#less--css-variables)
+         * [Global Helpers](#global-helpers)
+
 ## Feature Overview
 
 * Basic folder structure for initialization, collections, publications, server-methods, views and routes.
