@@ -2,6 +2,7 @@
 <head>
 	<meta name="apple-mobile-web-app-capable" content="yes"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<link rel="icon" href="/favicon.png" type="image/png" />
 </head>
 
 
@@ -23,7 +24,7 @@
 		</div>
 	{{/if}}
 
-	{{!-- show login form only if not logged in, yield will be specified by the route --}}
+	{{!-- show login form only if not logged in, yield will be specified by the route via this.render(templateName) --}}
 	{{#unless currentUser}}
 		{{> yield}}
 	{{/unless}}
