@@ -26,8 +26,8 @@ http
 
 ################ OPTIONAL / HELPFUL PACKAGES ################
 tsega:bootstrap3-datetimepicker
-matteodem:gridster
-peernohell:c3
+#matteodem:gridster
+#peernohell:c3
 juliancwirko:s-alert
 mrt:bootstrap3-typeahead
 fortawesome:fontawesome

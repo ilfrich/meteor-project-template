@@ -23,6 +23,7 @@ dbEntries.attachSchema(
             type: Date
         },
         complex: {
+            optional: true,
             type: new SimpleSchema({
                 label: {
                     type: String
