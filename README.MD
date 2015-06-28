@@ -2,7 +2,7 @@
 
 ## Table of Content
 
-* [Feature Overview](#feature-overview)
+* [Feature Summary](#feature-summary)
 * [Features](#features)
     * [Initialization](#initialization)
     * [Packages](#packages)
@@ -16,15 +16,13 @@
          * [LESS/CSS and Variables](#less--css-variables)
          * [Global Helpers](#global-helpers)
 
-## Feature Overview
+## Feature Summary
 
 * Basic folder structure for initialization, collections, publications, server-methods, views and routes.
+* Plenty of documented examples for different aspects of your application
 * Layout and loading template support
 * Login and local accounts
 * LESS support
-* Orion CLI
-
-The boilerplate contains multiple documented examples of different aspects of your application, which makes it ideal for beginners.
 
 ## Features
 
