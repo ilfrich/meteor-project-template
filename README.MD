@@ -201,10 +201,3 @@ WYSIWYG capabilities. Use with 3 curly brackets: `{{{nl2br text}}}`
 * **isActiveClass(a, b):** Allows you to add an 'active' class to a DOM element's class list under the condition that
 `a == b`.
 * **isAdmin():** Boolean helper to decide whether the user is an admin or not (to show different content)
-
-
-
-
-
-
-
