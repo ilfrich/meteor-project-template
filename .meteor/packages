@@ -19,16 +19,16 @@ momentjs:moment
 mizzao:bootstrap-3
 browser-policy
 reactive-var
-mrt:filesaver
-johdirr:meteor-git-rev
 http
 
 
 ################ OPTIONAL / HELPFUL PACKAGES ################
 tsega:bootstrap3-datetimepicker
+mrt:bootstrap3-typeahead
+mrt:filesaver
+johdirr:meteor-git-rev
 #matteodem:gridster
 #peernohell:c3
 juliancwirko:s-alert
-mrt:bootstrap3-typeahead
 fortawesome:fontawesome
 

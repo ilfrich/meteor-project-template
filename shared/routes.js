@@ -11,6 +11,7 @@
 Router.configure({
     // refers to a <template name="layout">
     layoutTemplate: 'layout',
+    // refers to a <template name="loading">
     loadingTemplate: 'loading'
 });
 
