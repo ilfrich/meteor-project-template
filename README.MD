@@ -3,6 +3,7 @@
 ## Table of Content
 
 * [Feature Summary](#feature-summary)
+* [User Accounts](#user-accounts)
 * [Features](#features)
     * [Initialization](#initialization)
     * [Packages](#packages)
@@ -23,6 +24,14 @@
 * Layout and loading template support
 * Login and local accounts
 * LESS support
+* Basic authentication
+
+## User Accounts
+
+Login | Password | Access
+----- | -------- | ------
+test | test | Standard User
+admin | admin | Admin User
 
 ## Features
 
