@@ -16,7 +16,7 @@ tmeasday:publish-counts
 meteorhacks:aggregate
 iron:router
 momentjs:moment
-mizzao:bootstrap-3
+twbs:bootstrap
 browser-policy
 reactive-var
 http
