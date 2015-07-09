@@ -35,7 +35,7 @@ Template.registerHelper('sizeOf', function(item) {
     else if (item.hasOwnProperty('length')) {
         return item.length;
     }
-    else if (item.hasOwnProperty('count')) {
+    else if (item.hasOwnProperty('collection')) {
         return item.count();
     }
 });
@@ -51,7 +51,7 @@ Template.registerHelper('isEmpty', function(item) {
         // empty array
         return (item.length == 0);
     }
-    else if (item.hasOwnProperty('count')) {
+    else if (item.hasOwnProperty('collection')) {
         // empty collection
         return (item.count() == 0);
     }
