@@ -1,4 +1,4 @@
-# Meteor Project Template / Boilerplate
+# Meteor Project Template / Boilerplate for Meteor 1.2.x
 
 ## Table of Content
 
